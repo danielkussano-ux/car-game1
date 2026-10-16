@@ -17,7 +17,7 @@ let posicaoInimigo = -70;
 let pontos = 0;
 let carrosDesviados = 0;
 let nivel = 1;
-let velocidade = 5;
+let velocidade = 100;
 let terminou = false;
 
 
@@ -37,9 +37,11 @@ function mover(direcao) {
   }
 
 
-  if (faixaJogador > 2) {
-    faixaJogador = 2;
+  if (faixaJogador > 6) {
+    faixaJogador = 6
+;
   }
+
 
 
   jogador.style.left = (faixaJogador * 100 + 30) + "px";
@@ -48,13 +50,13 @@ function mover(direcao) {
 
 // Controles pelo teclado.
 document.addEventListener("keydown", function(evento) {
-  if (evento.key === "ArrowLeft") {
+  if (evento.key === "a") {
     evento.preventDefault();
     mover(-1);
   }
 
 
-  if (evento.key === "ArrowRight") {
+  if (evento.key === "d") {
     evento.preventDefault();
     mover(1);
   }
@@ -76,7 +78,7 @@ const intervalo = setInterval(function() {
   if (
     faixaJogador === faixaInimigo &&
     posicaoAnterior < 380 &&
-    posicaoInimigo + 70 > 310
+    posicaoInimigo + 70 > 3190
   ) {
     terminou = true;
     clearInterval(intervalo);
@@ -90,7 +92,7 @@ const intervalo = setInterval(function() {
   // A pontuação aumenta com o tempo.
   // Nível 1: 10 pontos por segundo.
   // Nível 2: 20 pontos por segundo, e assim por diante.
-  pontos = pontos + nivel * 0.2;
+  pontos = pontos + nivel * 100;
   placar.textContent = Math.floor(pontos);
 
 
@@ -102,7 +104,7 @@ const intervalo = setInterval(function() {
 
     // O resto da divisão por 5 é zero em 5, 10, 15...
     if (carrosDesviados % 5 === 0) {
-      nivel = nivel + 1;
+      nivel = nivel + 4;
       velocidade = velocidade + 1;
 
 
@@ -115,7 +117,7 @@ const intervalo = setInterval(function() {
 
 
     // Sorteia a próxima faixa: 0, 1 ou 2.
-    faixaInimigo = Math.floor(Math.random() * 3);
+    faixaInimigo = Math.floor(Math.random() * 7);
 
 
     inimigo.style.left = (faixaInimigo * 100 + 30) + "px";

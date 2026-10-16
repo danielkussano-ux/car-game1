@@ -1,5 +1,5 @@
 body {
-  background: #202035;
+  background: #5a5adb;
   color: white;
   font-family: Arial, sans-serif;
   text-align: center;
@@ -13,10 +13,10 @@ h1 {
 
 /* Pista dividida em três faixas de 100px. */
 #pista {
-  width: 300px;
+  width: 700px;
   height: 400px;
   background: #111;
-  border: 3px solid cyan;
+  border: 3px solid rgb(255, 187, 0);
   margin: 20px auto;
   position: relative;
   overflow: hidden;
@@ -26,9 +26,9 @@ h1 {
 /* Linhas que separam as faixas. */
 .linha {
   position: absolute;
-  width: 2px;
+  width: 4px;
   height: 100%;
-  background: #555;
+  background: #e40505;
   top: 0;
 }
 
@@ -37,10 +37,26 @@ h1 {
   left: 100px;
 }
 
-
 .linha2 {
   left: 200px;
 }
+
+.linha3 {
+  left: 300px;
+}
+
+.linha4 {
+  left: 400px;
+}
+
+.linha5 {
+  left: 500px;
+}
+
+.linha6 {
+  left: 600px;
+}
+
 
 
 /* Aparência dos carros. */
@@ -66,16 +82,16 @@ h1 {
 
 
 #jogador {
-  background: #00ff88;
-  color: #00ff88;
+  background: #839db6;
+  color: #1cbb71;
   left: 130px;
   top: 310px;
 }
 
 
 #inimigo {
-  background: #ff0066;
-  color: #ff0066;
+  background: #00ffff;
+  color: #00ffea;
   left: 30px;
   top: -70px;
 }
